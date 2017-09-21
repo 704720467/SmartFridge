@@ -1,57 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:id="@+id/activity_main"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="horizontal">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <RadioGroup
-        android:id="@+id/main_tab_group"
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/white"
-        android:gravity="center"
-        android:orientation="vertical"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/text_black"
         android:paddingLeft="@dimen/_10dp"
         android:paddingRight="@dimen/_10dp">
 
-        <RadioButton
-            android:id="@+id/main_tab_ingredients"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:button="@null"
-            android:drawableTop="@mipmap/tabbar_ingredients_selected"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
             android:gravity="center"
-            android:paddingTop="6dp"
-            android:text="食材"
-            android:textColor="#FFD600"
-            android:textSize="12sp"/>
+            android:text="智慧冰箱"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
-        <RadioButton
-            android:id="@+id/main_tab_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15dp"
-            android:button="@null"
-            android:drawableTop="@mipmap/tabbar_menu"
+        <TextView
+            android:id="@+id/add_ingredient"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
             android:gravity="center"
-            android:paddingTop="6dp"
-            android:text="食谱"
-            android:textColor="@color/text_black"
-            android:textSize="12sp"/>
-    </RadioGroup>
+            android:text="添加食材"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
-    <View style="@style/cutline_vertical"/>
+    </RelativeLayout>
 
-    <com.smartfridge.view.HorizonVerticalViewPager
-        android:id="@+id/main_viewpager"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        app:isVertical="true"/>
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/main_tab_group"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_10dp"
+            android:paddingRight="@dimen/_10dp">
+
+            <RadioButton
+                android:id="@+id/main_tab_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:button="@null"
+                android:drawableTop="@mipmap/tabbar_ingredients_selected"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:text="食材"
+                android:textColor="#FFD600"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/main_tab_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15dp"
+                android:button="@null"
+                android:drawableTop="@mipmap/tabbar_menu"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:text="食谱"
+                android:textColor="@color/text_black"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+        <View style="@style/cutline_vertical" />
+
+        <com.smartfridge.view.HorizonVerticalViewPager
+            android:id="@+id/main_viewpager"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:isVertical="true" />
+    </LinearLayout>
+
 </LinearLayout>

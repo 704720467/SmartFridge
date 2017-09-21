@@ -1,5 +1,6 @@
 package com.smartfridge.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     private void initView() {
+        findViewById(R.id.add_ingredient).setOnClickListener(this);
         mRadioGroup = (RadioGroup) findViewById(R.id.main_tab_group);
         mTabIngredients = (RadioButton) findViewById(R.id.main_tab_ingredients);
         mTabMenu = (RadioButton) findViewById(R.id.main_tab_menu);
@@ -54,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 break;
             case R.id.main_tab_menu:
                 mViewPager.setCurrentItem(1);
+                break;
+            case R.id.add_ingredient:
+                startActivity(new Intent(MainActivity.this, EditActivity.class));
                 break;
         }
     }
@@ -92,28 +97,5 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mTabMenu.setTextColor(Color.parseColor((checkedId == R.id.main_tab_menu) ? "#FFD600" : "#333333"));
         mTabIngredients.setCompoundDrawables(null, mTabIngredientsDra, null, null);
         mTabIngredients.setTextColor(Color.parseColor((checkedId == R.id.main_tab_ingredients) ? "#FFD600" : "#333333"));
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.info, menu);
-
-        //menu.add(1, Menu.FIRST, 1, "Change Site ID");
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.quit1:
-                super.finish();
-                System.exit(0);
-                return true;
-            default:
-                return false;
-        }
     }
 }

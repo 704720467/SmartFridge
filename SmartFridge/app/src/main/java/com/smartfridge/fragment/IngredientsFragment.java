@@ -1,5 +1,6 @@
 package com.smartfridge.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.smartfridge.R;
+import com.smartfridge.activity.EditActivity;
 import com.smartfridge.adapter.IngredientsAdapter;
 import com.smartfridge.decoration.DividerGridItemDecoration;
+import com.smartfridge.listener.OnRecyclerItemClickListener;
 import com.smartfridge.mvp.module.Ingredient;
+import com.smartfridge.util.TextUtil;
+import com.smartfridge.util.ToastUtil;
 
 import java.util.ArrayList;
 
@@ -63,5 +69,17 @@ public class IngredientsFragment extends Fragment {
 
         rcIngredients.setLayoutManager(new GridLayoutManager(getContext(), 4));
         rcIngredients.addItemDecoration(new DividerGridItemDecoration(getContext()));
+
+        rcIngredients.addOnItemTouchListener(new OnRecyclerItemClickListener(rcIngredients) {
+            @Override
+            public void onItemClick(RecyclerView.ViewHolder viewHolder) {
+                startActivity(new Intent(getContext(), EditActivity.class));
+            }
+
+            @Override
+            public void onLongClick(RecyclerView.ViewHolder viewHolder) {
+                ToastUtil.showDefaultSuperToast(getContext(), "长按" + +viewHolder.getAdapterPosition());
+            }
+        });
     }
 }
