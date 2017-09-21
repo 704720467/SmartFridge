@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+                android:oneshot="false">
+    <item android:drawable="@drawable/refresh8_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh9_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh10_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh11_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh12_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh13_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh14_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh15_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh16_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh17_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh18_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh19_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh20_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh21_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh22_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh23_03" android:duration="50" />
+    <item android:drawable="@drawable/refresh24_03" android:duration="50" />
+</animation-list>
